@@ -1,0 +1,19 @@
+FROM python:latest
+
+RUN apt-get update && \
+    apt install -y curl
+
+RUN pip3 install requests
+
+# create file
+RUN mkdir -p /usr/src/data
+
+# mount volume
+VOLUME ["/usr/src/data"]
+
+# run python script
+WORKDIR /usr/src/app
+COPY script.py .
+
+ENTRYPOINT ["python3", "script.py"]
+
