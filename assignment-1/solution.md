@@ -8,4 +8,4 @@
 `docker run -d --rm -p 3000:3000 --network assignment --name notifications-service dclandau/cec-notifications-service --secret-key QJUHsPhnA0eiqHuJqsPgzhDozYO4f1zh --external-ip localhost`
 
 #### 4. Run the assignment container using
-`docker run --rm --name client --network assignment --volume ~/assignment-1/data:/usr/src/data client`
+`docker run --rm --name client --network assignment --volume ~/INFOMCEC-practise/assignment-1/data:/usr/src/data client`
