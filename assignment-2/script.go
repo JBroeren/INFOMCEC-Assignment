@@ -105,7 +105,7 @@ func main() {
 			if err := json.Unmarshal([]byte(schema), &schemaMap); err != nil {
 				log.Printf("Failed to parse schema: %v", err)
 			} else {
-				fmt.Printf(schemaMap)
+				fmt.Printf("%s: ", schemaMap["type"].(string))
 				fmt.Printf("%s\n", schemaMap["name"].(string))
 			}
 
