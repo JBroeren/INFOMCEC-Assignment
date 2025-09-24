@@ -17,5 +17,10 @@ response = requests.post(url, headers=headers, json=data)
 
 print(json.dumps(response.json()))
 
-with open('/usr/src/data/output_file', 'a') as file:
+# create file if it doesn't exist, else append to it
+if not os.path.exists('/usr/src/data/output_file.txt'):
+   print("Creating output file")
+   open('/usr/src/data/output_file.txt', 'w').close()
+
+with open('/usr/src/data/output_file.txt', 'a') as file:
 	file.write(str(json.dumps(response.json()) + "\n"))
